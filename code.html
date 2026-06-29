@@ -1,0 +1,563 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>EKIYUNGU Food Mart | Fresh Organic Food Delivered</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#40493d",
+                        "on-error-container": "#93000a",
+                        "secondary": "#3e6a00",
+                        "outline": "#707a6c",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#0d631b",
+                        "on-secondary-container": "#437000",
+                        "surface-container-low": "#f5f3f3",
+                        "on-primary-fixed-variant": "#005312",
+                        "on-error": "#ffffff",
+                        "surface-container": "#f0eded",
+                        "inverse-on-surface": "#f2f0f0",
+                        "outline-variant": "#bfcaba",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#ffddb9",
+                        "on-tertiary-fixed-variant": "#663e00",
+                        "surface-container-high": "#eae8e7",
+                        "on-background": "#1b1c1c",
+                        "surface": "#fbf9f8",
+                        "on-tertiary-container": "#ffefe0",
+                        "secondary-container": "#b9f474",
+                        "surface-dim": "#dcd9d9",
+                        "on-secondary-fixed-variant": "#2e4f00",
+                        "primary-fixed": "#a3f69c",
+                        "error": "#ba1a1a",
+                        "surface-bright": "#fbf9f8",
+                        "inverse-surface": "#303030",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#88d982",
+                        "secondary-fixed": "#b9f474",
+                        "tertiary-fixed-dim": "#ffb961",
+                        "primary-container": "#2e7d32",
+                        "background": "#fbf9f8",
+                        "surface-container-highest": "#e4e2e1",
+                        "tertiary": "#7a4b00",
+                        "surface-tint": "#1b6d24",
+                        "primary-fixed-dim": "#88d982",
+                        "on-primary-container": "#cbffc2",
+                        "tertiary-container": "#9b6100",
+                        "on-primary-fixed": "#002204",
+                        "on-secondary-fixed": "#0f2000",
+                        "on-tertiary-fixed": "#2b1700",
+                        "on-primary": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "secondary-fixed-dim": "#9ed75b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "40px",
+                        "container-max": "1280px",
+                        "base": "8px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "section-gap": "80px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "body-md": ["Inter"],
+                        "label-lg": ["Inter"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(16px);
+        }
+        .organic-shadow {
+            box-shadow: 0 4px 20px rgba(13, 99, 27, 0.08);
+        }
+        .product-card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(13, 99, 27, 0.12);
+        }
+        .mango-gradient {
+            background: linear-gradient(135deg, #ff9100 0%, #ff6d00 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 glass-nav shadow-sm h-20 transition-all duration-300">
+<nav class="flex justify-between items-center px-margin-desktop h-full max-w-container-max mx-auto">
+<div class="text-headline-md font-headline-md font-bold text-primary">EKIYUNGU</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-lg text-label-lg" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Fresh Fruits</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Vegetables</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Grains</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">Smoothies</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-200 font-label-lg text-label-lg" href="#">About</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-primary p-2 hover:bg-primary-fixed transition-colors rounded-full" data-icon="shopping_cart">shopping_cart</button>
+<div class="h-6 w-[1px] bg-outline-variant hidden md:block mx-2"></div>
+<button class="hidden md:block text-on-surface-variant hover:text-primary font-label-lg text-label-lg transition-colors">Login</button>
+<button class="mango-gradient text-white px-6 py-2 rounded-full font-label-lg text-label-lg hover:scale-95 transition-transform">Register</button>
+</div>
+</nav>
+</header>
+<!-- Hero Banner -->
+<section class="relative h-[90vh] flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Fresh Farm Produce" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4te58VeQ_OzcL-xjq9E8pMF9Y0quFHu-Abbz65gipCZHzXIcG4b00LZb5dvsbn7rWDYMnpkR5OhqAZpg3EDCZAbGNxQW80DhZaL_hHkh73LmHA5T1m00MriHRj0_DxvQkRi9_VfXQqpsIodZij2mF_a8xPGixOT7c8GfO7gJ77PZ-G49eIU8eg-57YN9xd7DGe6meLB9v8GzEPwuAiCpHoxRWOp_pSq_T0pYc0LpjD-Dbp1uLKGIASfZ6lypb_JoXjNXqZ7Ml_Ng">
+<div class="absolute inset-0 bg-gradient-to-r from-background/90 via-background/40 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
+<div class="max-w-2xl space-y-6">
+<h1 class="text-display-lg font-display-lg text-on-background leading-tight">
+                    Fresh Organic Food <span class="text-primary">Delivered</span> to Your Doorstep
+                </h1>
+<p class="text-body-lg font-body-lg text-on-surface-variant">
+                    Healthy fruits, vegetables, grains, and natural smoothies sourced directly from trusted farmers.
+                </p>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="mango-gradient text-white px-8 py-4 rounded-full font-headline-md text-body-md hover:scale-95 transition-all shadow-lg">Shop Fresh Produce</button>
+<button class="border-2 border-primary text-primary px-8 py-4 rounded-full font-headline-md text-body-md hover:bg-primary/5 transition-all">Order Smoothies</button>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="absolute -bottom-10 -right-10 opacity-20 pointer-events-none animate-pulse">
+<span class="material-symbols-outlined text-[300px] text-primary" data-icon="leaf">gleaf</span>
+</div>
+</section>
+<!-- Featured Categories -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-2">Explore Categories</h2>
+<div class="w-20 h-1 bg-secondary rounded-full"></div>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-2" href="#">View All <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-gutter">
+<!-- Categories Mocked from IMAGE_4 logic -->
+<div class="group cursor-pointer">
+<div class="bg-surface-container rounded-2xl p-4 product-card-hover transition-all duration-300">
+<div class="aspect-square rounded-xl mb-4 overflow-hidden">
+<img alt="Fresh Fruits" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCbYjmMuuLGoi20KolLcQn_I4fEVgUTK0LpN6SipBsuPPSQw4hEWDLuVr8eY6gTqNvfxv4eS-LVbFGdP48gwFN31byTwmd3eF_CAQ1YCchCHVeiC4LoeZmAqLpAzZ5W1JE0xL7zWaOPEORyz6uHVrap7wO0owpe2NK5Gf4bO2fRGWMEQGPVEjjss5EJZtbmoGjeagA7ndXVuc9ddvV6RAP9ggW2jISO3vcsN4tdyV3fATZbo7ukoos9oAZGYCTPYIgvDsFe1vdaI">
+</div>
+<p class="text-center font-headline-md text-body-md text-on-background">Fresh Fruits</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-surface-container rounded-2xl p-4 product-card-hover transition-all duration-300">
+<div class="aspect-square rounded-xl mb-4 overflow-hidden">
+<img alt="Organic Vegetables" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCbYjmMuuLGoi20KolLcQn_I4fEVgUTK0LpN6SipBsuPPSQw4hEWDLuVr8eY6gTqNvfxv4eS-LVbFGdP48gwFN31byTwmd3eF_CAQ1YCchCHVeiC4LoeZmAqLpAzZ5W1JE0xL7zWaOPEORyz6uHVrap7wO0owpe2NK5Gf4bO2fRGWMEQGPVEjjss5EJZtbmoGjeagA7ndXVuc9ddvV6RAP9ggW2jISO3vcsN4tdyV3fATZbo7ukoos9oAZGYCTPYIgvDsFe1vdaI">
+</div>
+<p class="text-center font-headline-md text-body-md text-on-background">Organic Vegetables</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-surface-container rounded-2xl p-4 product-card-hover transition-all duration-300">
+<div class="aspect-square rounded-xl mb-4 overflow-hidden">
+<img alt="Grains &amp; Cereals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCbYjmMuuLGoi20KolLcQn_I4fEVgUTK0LpN6SipBsuPPSQw4hEWDLuVr8eY6gTqNvfxv4eS-LVbFGdP48gwFN31byTwmd3eF_CAQ1YCchCHVeiC4LoeZmAqLpAzZ5W1JE0xL7zWaOPEORyz6uHVrap7wO0owpe2NK5Gf4bO2fRGWMEQGPVEjjss5EJZtbmoGjeagA7ndXVuc9ddvV6RAP9ggW2jISO3vcsN4tdyV3fATZbo7ukoos9oAZGYCTPYIgvDsFe1vdaI">
+</div>
+<p class="text-center font-headline-md text-body-md text-on-background">Grains &amp; Cereals</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-surface-container rounded-2xl p-4 product-card-hover transition-all duration-300">
+<div class="aspect-square rounded-xl mb-4 overflow-hidden">
+<img alt="Healthy Smoothies" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCbYjmMuuLGoi20KolLcQn_I4fEVgUTK0LpN6SipBsuPPSQw4hEWDLuVr8eY6gTqNvfxv4eS-LVbFGdP48gwFN31byTwmd3eF_CAQ1YCchCHVeiC4LoeZmAqLpAzZ5W1JE0xL7zWaOPEORyz6uHVrap7wO0owpe2NK5Gf4bO2fRGWMEQGPVEjjss5EJZtbmoGjeagA7ndXVuc9ddvV6RAP9ggW2jISO3vcsN4tdyV3fATZbo7ukoos9oAZGYCTPYIgvDsFe1vdaI">
+</div>
+<p class="text-center font-headline-md text-body-md text-on-background">Healthy Smoothies</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-surface-container rounded-2xl p-4 product-card-hover transition-all duration-300">
+<div class="aspect-square rounded-xl mb-4 overflow-hidden">
+<img alt="Household Food Essentials" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCbYjmMuuLGoi20KolLcQn_I4fEVgUTK0LpN6SipBsuPPSQw4hEWDLuVr8eY6gTqNvfxv4eS-LVbFGdP48gwFN31byTwmd3eF_CAQ1YCchCHVeiC4LoeZmAqLpAzZ5W1JE0xL7zWaOPEORyz6uHVrap7wO0owpe2NK5Gf4bO2fRGWMEQGPVEjjss5EJZtbmoGjeagA7ndXVuc9ddvV6RAP9ggW2jISO3vcsN4tdyV3fATZbo7ukoos9oAZGYCTPYIgvDsFe1vdaI">
+</div>
+<p class="text-center font-headline-md text-body-md text-on-background">Household Essentials</p>
+</div>
+</div>
+<div class="group cursor-pointer">
+<div class="bg-surface-container rounded-2xl p-4 product-card-hover transition-all duration-300">
+<div class="aspect-square rounded-xl mb-4 overflow-hidden">
+<img alt="Farm Fresh Produce" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBCbYjmMuuLGoi20KolLcQn_I4fEVgUTK0LpN6SipBsuPPSQw4hEWDLuVr8eY6gTqNvfxv4eS-LVbFGdP48gwFN31byTwmd3eF_CAQ1YCchCHVeiC4LoeZmAqLpAzZ5W1JE0xL7zWaOPEORyz6uHVrap7wO0owpe2NK5Gf4bO2fRGWMEQGPVEjjss5EJZtbmoGjeagA7ndXVuc9ddvV6RAP9ggW2jISO3vcsN4tdyV3fATZbo7ukoos9oAZGYCTPYIgvDsFe1vdaI">
+</div>
+<p class="text-center font-headline-md text-body-md text-on-background">Farm Produce</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Popular Products Grid -->
+<section class="py-section-gap bg-surface-container-low px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-headline-lg font-headline-lg text-on-background mb-4">Our Popular Products</h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Hand-picked, certified organic produce delivered straight from the heart of Uganda's fertile lands.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Cards mapping for 12 items using Image 5 -->
+<script>
+                    const products = [
+                        { name: "Pineapple", price: "3,500" },
+                        { name: "Mango", price: "2,000" },
+                        { name: "Watermelon", price: "5,000" },
+                        { name: "Avocado", price: "1,500" },
+                        { name: "Passion Fruit", price: "4,000" },
+                        { name: "Sweet Bananas", price: "2,500" },
+                        { name: "Tomatoes", price: "3,000" },
+                        { name: "Carrots", price: "1,800" },
+                        { name: "Green Pepper", price: "1,200" },
+                        { name: "Beans", price: "4,500" },
+                        { name: "Maize Flour", price: "5,500" },
+                        { name: "Groundnuts", price: "6,000" }
+                    ];
+
+                    document.write(products.map(p => `
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="${p.name}" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">${p.name}</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX ${p.price}</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Pineapple" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Pineapple</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 3,500</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Mango" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Mango</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 2,000</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Watermelon" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Watermelon</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 5,000</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Avocado" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Avocado</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 1,500</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Passion Fruit" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Passion Fruit</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 4,000</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Sweet Bananas" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Sweet Bananas</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 2,500</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Tomatoes" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Tomatoes</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 3,000</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Carrots" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Carrots</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 1,800</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Green Pepper" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Green Pepper</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 1,200</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Beans" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Beans</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 4,500</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Maize Flour" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Maize Flour</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 5,500</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="bg-white rounded-2xl overflow-hidden organic-shadow product-card-hover transition-all duration-300 flex flex-col group">
+                            <div class="relative overflow-hidden aspect-[4/3]">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLRGEa-_BbRYwdwPS3XaYGhWUmtzbdkoUjtGh68GYSRjJtzMaNN3Dqlw--THfcmmmanWsQYxe48wWpUN8y8DVpYoqZBb3bz5IK893E939J78FrjO3KSswLAsCPEMQVVjcNSEXvEjkIUbHY8O6MsfSeBtGNj8sg2XhM3nAX6gPh1lVLoVTjKUryeK0eMnKZcDfIYevme7qUZM87xjMTRt8-1Lc1OHPpea1o3THaVFjFAg3F-app4Ishy1QUHnmf7ZyTIpDUOpH753U" alt="Groundnuts" class="w-full h-full object-contain p-6 group-hover:scale-105 transition-transform">
+                                <span class="absolute top-4 left-4 bg-secondary-container text-on-secondary-container text-label-sm font-label-sm px-3 py-1 rounded-full">Organic</span>
+                            </div>
+                            <div class="p-6 flex flex-col flex-grow">
+                                <h3 class="font-headline-md text-body-md mb-2">Groundnuts</h3>
+                                <div class="flex justify-between items-center mt-auto">
+                                    <span class="text-primary font-bold text-headline-md">UGX 6,000</span>
+                                    <button class="material-symbols-outlined bg-primary text-white p-2 rounded-full hover:mango-gradient transition-all" data-icon="add_shopping_cart">add_shopping_cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    
+</div>
+</div>
+</section>
+<!-- Healthy Smoothies Section -->
+<section class="py-section-gap px-margin-desktop">
+<div class="max-w-container-max mx-auto bg-primary rounded-[2.5rem] overflow-hidden organic-shadow">
+<div class="flex flex-col lg:flex-row items-center">
+<div class="w-full lg:w-1/2 p-12 lg:p-20 text-white space-y-6">
+<span class="text-primary-fixed bg-on-primary-fixed-variant/30 px-4 py-2 rounded-full text-label-sm uppercase tracking-widest font-bold">New &amp; Refreshing</span>
+<h2 class="text-display-lg font-display-lg leading-tight">Artisanal Fresh <br>Smoothie Bar</h2>
+<p class="text-body-lg text-primary-fixed opacity-90">Experience the natural sweetness of Ugandan fruits blended to perfection. Our smoothies are functional, nutritional, and completely natural.</p>
+<div class="flex flex-wrap gap-4 mt-8">
+<div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="eco">eco</span>
+<span class="text-label-lg">100% Natural</span>
+</div>
+<div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="block">block</span>
+<span class="text-label-lg">No Added Sugar</span>
+</div>
+<div class="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full backdrop-blur-md">
+<span class="material-symbols-outlined text-secondary-fixed" data-icon="agriculture">agriculture</span>
+<span class="text-label-lg">Farm Fresh</span>
+</div>
+</div>
+<button class="mango-gradient text-white px-10 py-4 rounded-full font-headline-md text-body-md hover:scale-105 transition-all mt-8 block lg:inline-block shadow-xl">Order Your Blast Now</button>
+</div>
+<div class="w-full lg:w-1/2 h-full">
+<img alt="Gourmet Smoothies" class="w-full h-full object-cover min-h-[500px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqV8Xf0Q-cUtKKUaqmxh6k2KwtbwTTP49ncBLxa5uXBEDxQhuKG1efrx4mkHnfsd9z2nUFbdiU7pV1A_CDEKDu5nx-nsfBDlbXYzRnEoB1MxOYOQz2VeNAkDmpFvYTRjPVAE1_04OstOK-0i_n8v1xVaMqJzQYGIK0L2jJIKEoP678efIig3ezeZiOt223ngk-mLGpAOn7WkGGpNZ4xJEEwcYsOUHn0aEEXrvAVbhg_XJpkNX42ap3EZZOBEB0QHqP6NKNEk8bUlM">
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Section -->
+<section class="py-section-gap px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="p-8 bg-surface-container-high rounded-2xl space-y-4">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="local_shipping">local_shipping</span>
+</div>
+<h3 class="text-headline-md font-headline-md">Fast Delivery</h3>
+<p class="text-on-surface-variant">Same-day delivery for all orders placed before noon. Freshness guaranteed at your door.</p>
+</div>
+<div class="p-8 bg-surface-container-high rounded-2xl space-y-4">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="payments">payments</span>
+</div>
+<h3 class="text-headline-md font-headline-md">Secure Payments</h3>
+<p class="text-on-surface-variant">Integrated with MTN &amp; Airtel Mobile Money for a seamless and safe checkout experience.</p>
+</div>
+<div class="p-8 bg-surface-container-high rounded-2xl space-y-4">
+<div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="verified">verified</span>
+</div>
+<h3 class="text-headline-md font-headline-md">Quality Guaranteed</h3>
+<p class="text-on-surface-variant">We partner with verified local farmers to ensure only the highest grade produce reaches you.</p>
+</div>
+</div>
+</section>
+<!-- Newsletter -->
+<section class="py-section-gap px-margin-desktop">
+<div class="max-w-4xl mx-auto bg-surface rounded-3xl p-12 border-2 border-outline-variant/30 text-center space-y-6 relative overflow-hidden">
+<div class="absolute -top-10 -left-10 opacity-5">
+<span class="material-symbols-outlined text-[150px]" data-icon="nutrition">nutrition</span>
+</div>
+<h2 class="text-headline-lg font-headline-lg">Get Fresh Deals &amp; Healthy Living Tips</h2>
+<p class="text-on-surface-variant text-body-lg">Join 5,000+ happy customers receiving weekly harvest updates and recipes.</p>
+<form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+<input class="flex-grow rounded-full px-6 py-4 border-outline focus:ring-2 focus:ring-primary outline-none" placeholder="Enter your email" type="email">
+<button class="mango-gradient text-white px-8 py-4 rounded-full font-bold hover:scale-95 transition-all" type="submit">Subscribe Now</button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-highest w-full rounded-t-xl border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="text-headline-md font-headline-md font-bold text-primary">
+                    EKIYUNGU Food Mart
+                </div>
+<p class="text-on-surface-variant font-body-md">Connecting you to the freshest organic produce from Uganda's local farmers.</p>
+<div class="flex gap-4">
+<a class="material-symbols-outlined text-primary hover:scale-110 transition-transform" data-icon="facebook" href="#">facebook</a>
+<a class="material-symbols-outlined text-primary hover:scale-110 transition-transform" data-icon="chat" href="#">chat</a>
+<a class="material-symbols-outlined text-primary hover:scale-110 transition-transform" data-icon="camera" href="#">camera</a>
+</div>
+</div>
+<div class="space-y-4">
+<h4 class="text-headline-sm font-headline-md">Quick Links</h4>
+<ul class="space-y-2">
+<li class=""><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">About Us</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Contact</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Delivery Areas</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-headline-sm font-headline-md">Legal</h4>
+<ul class="space-y-2">
+<li class=""><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Terms of Service</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary hover:translate-x-1 transition-transform inline-block" href="#">Privacy Policy</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="text-headline-sm font-headline-md">Payments</h4>
+<div class="flex flex-wrap gap-2 opacity-70">
+<span class="material-symbols-outlined text-4xl" data-icon="credit_card">credit_card</span>
+<span class="material-symbols-outlined text-4xl" data-icon="smartphone">smartphone</span>
+<span class="material-symbols-outlined text-4xl" data-icon="account_balance_wallet">account_balance_wallet</span>
+</div>
+<p class="text-label-sm text-on-surface-variant mt-4">© 2024 EKIYUNGU Food Mart. All rights reserved.</p>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('shadow-md', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+    </script>
+
+
+</body></html>
